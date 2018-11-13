@@ -5,14 +5,14 @@ import java.util.List;
  
 public class Main {
 
-	Processing obj = new Processing();
+	static Processing obj = new Processing();
 
 	public static void main(String[] args) throws IOException {
-
+		populationRun(args);
 
 	}
 
-	public void createMouseTranscriptsFile(String workingDirectory, String gtfFile, String transcriptsFileName) {
+	public static void createMouseTranscriptsFile(String workingDirectory, String gtfFile, String transcriptsFileName) {
 //		String transcriptsFileName="mouseGenesTest.txt";
 		// String gtfFile = "gpfs0/tals/projects/data/Transcriptomes/mm10/mm10_combined_annotated_oneName.gtf";
 //		String gtfFile = "Z:\\ess_projects\\data\\Transcriptomes\\mm10\\mm10_combined_annotated_oneName.gtf";
@@ -21,7 +21,7 @@ public class Main {
 		System.out.println("finish");
 	}
 
-	public void singleCellRun(String[] args) {
+	public static void singleCellRun(String[] args) {
 		List<cellsGroup> cells = new ArrayList<cellsGroup>();
 		int i = 0;
 		String picardPath = args[i++];
@@ -41,7 +41,9 @@ public class Main {
 		System.out.println("finish");
 	}
 
-	public void populationRun(String args[]){
+	public static void populationRun(String args[]){
+		if(args.length < 6)
+			System.out.println("Some parameters are missing");
 		String[] BamFiles = new String[args.length - 6];
 		int i = 0;
 		String picardPath = args[i++];

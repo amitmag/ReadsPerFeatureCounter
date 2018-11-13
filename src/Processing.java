@@ -181,6 +181,10 @@ public class Processing {
 	// the gene interval
 	public boolean readInterval(String file, String outputFolder, String pathToBamFolder, String picardPath, char flag) {
 		try {// running on windows
+			if(!new File(pathToBamFolder, file).exists()) 
+				System.out.println("The bam file " + file + "does not exists inside " + pathToBamFolder);
+			if(!new File(picardPath, "picard.jar").exists())
+				System.out.println("The file picard.jar does no exists inside " + picardPath);
 			if (System.getProperty("os.name").compareTo("Windows 7") == 0 || System.getProperty("os.name").compareTo("Windows 10") == 0) {
 				String command = "cmd /c start cmd.exe /K \"java -jar " + picardPath + "\\picard.jar ViewSam I="+ pathToBamFolder +"\\"+ file + " INTERVAL_LIST=" + outputFolder + "\\one_gene_";
 				if(flag == 'l' || flag == 's')		
