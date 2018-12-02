@@ -22,7 +22,7 @@ public class Main {
 	}
 
 	public static void singleCellRun(String[] args) {
-		List<cellsGroup> cells = new ArrayList<cellsGroup>();
+		List<cellsGroup> cells = new ArrayList<>();
 		int i = 0;
 		String picardPath = args[i++];
 		String fileName = args[i++];

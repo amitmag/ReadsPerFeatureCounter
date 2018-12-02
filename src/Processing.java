@@ -181,12 +181,12 @@ public class Processing {
 	// the gene interval
 	public boolean readInterval(String file, String outputFolder, String pathToBamFolder, String picardPath, char flag) {
 		try {// running on windows
-			if(!new File(pathToBamFolder, file).exists()) 
+			if(!new File(pathToBamFolder, file).exists())
 				System.out.println("The bam file " + file + "does not exists inside " + pathToBamFolder);
 			if(!new File(picardPath, "picard.jar").exists())
 				System.out.println("The file picard.jar does no exists inside " + picardPath);
 			if (System.getProperty("os.name").compareTo("Windows 7") == 0 || System.getProperty("os.name").compareTo("Windows 10") == 0) {
-				String command = "cmd /c start cmd.exe /K \"java -jar " + picardPath + "\\picard.jar ViewSam I="+ pathToBamFolder +"\\"+ file + " INTERVAL_LIST=" + outputFolder + "\\one_gene_";
+				String command = "cmd /c start /wait cmd.exe /K \"java -jar " + picardPath + "\\picard.jar ViewSam I="+ pathToBamFolder +"\\"+ file + " INTERVAL_LIST=" + outputFolder + "\\one_gene_";
 				if(flag == 'l' || flag == 's')		
 					command += file + ".interval_list >" + outputFolder + "\\one_gene_" + file + ".txt";
 				else
@@ -195,9 +195,9 @@ public class Processing {
 				Process p = Runtime.getRuntime().exec(command);
 				p.waitFor();
 				Runtime.getRuntime().exec("taskkill /F /IM cmd.exe");
-				Thread.sleep(1000);
+				//Thread.sleep(1000);
 			} else {// running on cluster
-				String command = "java -jar" + picardPath + "picard.jar ViewSam I="+ pathToBamFolder +"/"+ file + " INTERVAL_LIST=" + outputFolder + "/one_gene_";
+				String command = "java -jar " + picardPath + "picard.jar ViewSam I="+ pathToBamFolder +"/"+ file + " INTERVAL_LIST=" + outputFolder + "/one_gene_";
 				if(flag == 'l' || flag == 's')		
 					command += file + ".interval_list >" + outputFolder + "/one_gene_" + file + ".txt";
 				else
@@ -205,7 +205,7 @@ public class Processing {
 				String[] cmd = { "/bin/sh", "-c", command };
 				Process p = Runtime.getRuntime().exec(cmd);
 				p.waitFor();
-				Runtime.getRuntime().exec("kill $p");
+                Runtime.getRuntime().exec("kill $p");
 			}
 		} catch (Exception e) {
 			System.out.println(e);
@@ -228,7 +228,7 @@ public class Processing {
 				if (call[0].substring(0, 1).equals("@") || call.length == 1) // check if we need to ignore from this line
 					continue;
 				else {
-					countLines++;
+                    countLines++;
 					if (flag == 's') 
 						gene.updateCallSingleCell(call, cells, startingPosition, endingPosition, uniqueId);
 					

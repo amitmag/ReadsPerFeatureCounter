@@ -436,99 +436,103 @@ public class Gene{
 	
 	private void startWithM(String cigar, int cell, int start, String ID,int startingPosition, int endingPosition, int cellRange, int bamFileIndex, char flag, String uniqueId){
 		
-			
-		int indexM = cigar.indexOf((int)'M'); //M index in the cigar
-		int length = Util.convertToInteger(cigar.substring(0, indexM)); //length on the call until the M
-	
-		//if the call starts before the beginning of the gene
-		String[] temp = startBeforeGene(start, startingPosition, length, ID, cell, cellRange, indexM, cigar, bamFileIndex, flag, uniqueId);
-		cigar = temp[0];
-		start = Util.convertToInteger(temp[1]);
-		indexM = Util.convertToInteger(temp[2]);
+		try {
+			int indexM = cigar.indexOf((int) 'M'); //M index in the cigar
+			int length = Util.convertToInteger(cigar.substring(0, indexM)); //length on the call until the M
 
-		//create introns and exons array
-		int[][] intronsArray = getIntronsArray();
-		int[][] exonsArray = getExonsArray();
 
-		//initial first indexes
-		int exonIndex = 0, intronIndex = 0, firstExonAdded, firstIntronAdded, exonEnd = 0, intronEnd = 0,intronStart = 0 ;
-		int exonStart = exonsArray[exonIndex][0];
-		if(intronsArray.length > 0)
-			intronStart = intronsArray[intronIndex][0];
+			//if the call starts before the beginning of the gene
+			String[] temp = startBeforeGene(start, startingPosition, length, ID, cell, cellRange, indexM, cigar, bamFileIndex, flag, uniqueId);
+			cigar = temp[0];
+			start = Util.convertToInteger(temp[1]);
+			indexM = Util.convertToInteger(temp[2]);
 
-		while(!cigar.equals("")){//while the call did not finished
-			firstExonAdded = -1;
-			firstIntronAdded = -1;		
+			//create introns and exons array
+			int[][] intronsArray = getIntronsArray();
+			int[][] exonsArray = getExonsArray();
 
-			//check on which exons the call falls
-			while(exonIndex < exonsArray.length && (exonStart <= start || exonStart == exonsArray[exonIndex][0] || (startingPosition > start ))){
-				exonStart = exonsArray[exonIndex][0];
-				exonEnd = exonsArray[exonIndex][1];
-
-				if((start <= exonEnd && start >= exonStart) || (start + length <= exonEnd && start + length > exonStart)){
-					addToExon(exonStart, exonEnd, ID, cellRange, cell, exonIndex, bamFileIndex, flag, uniqueId);
-						
-					if(firstExonAdded == -1)
-						firstExonAdded = exonIndex;
-				}
-				exonIndex++;
-			}
-			if(exonIndex > 0)
-				exonIndex--;
-			
-			//check on which introns the call falls
-			while(intronIndex < intronsArray.length && (intronStart <= start || intronStart == intronsArray[intronIndex][0])){
+			//initial first indexes
+			int exonIndex = 0, intronIndex = 0, firstExonAdded, firstIntronAdded, exonEnd = 0, intronEnd = 0, intronStart = 0;
+			int exonStart = exonsArray[exonIndex][0];
+			if (intronsArray.length > 0)
 				intronStart = intronsArray[intronIndex][0];
-				intronEnd = intronsArray[intronIndex][1];
-				if((start <= intronEnd && start >= intronStart) || (start + length <= intronEnd && start + length > intronStart)){
-					addToIntron(intronStart, intronEnd, ID, cellRange, cell, intronIndex, bamFileIndex, flag, uniqueId);
-					if(firstIntronAdded == -1)
-						firstIntronAdded = intronIndex;
+
+			while (!cigar.equals("")) {//while the call did not finished
+				firstExonAdded = -1;
+				firstIntronAdded = -1;
+
+				//check on which exons the call falls
+				while (exonIndex < exonsArray.length && (exonStart <= start || exonStart == exonsArray[exonIndex][0] || (startingPosition > start))) {
+					exonStart = exonsArray[exonIndex][0];
+					exonEnd = exonsArray[exonIndex][1];
+
+					if ((start <= exonEnd && start >= exonStart) || (start + length <= exonEnd && start + length > exonStart)) {
+						addToExon(exonStart, exonEnd, ID, cellRange, cell, exonIndex, bamFileIndex, flag, uniqueId);
+
+						if (firstExonAdded == -1)
+							firstExonAdded = exonIndex;
+					}
+					exonIndex++;
 				}
-				intronIndex++;				
-			}
-			if(intronIndex > 0)
-				intronIndex--;
-			
-			
-			if(firstExonAdded != -1)
-				exonIndex = firstExonAdded;
-			if(firstIntronAdded != -1)
-				intronIndex = firstIntronAdded;
-				
-				
-			//check on which junction the call falls
-			if(exonIndex == exonsArray.length)
-				break;
-			//count the junction
-			start = start + length;
-			if(cigar.length() > indexM){
-				cigar = cigar.substring(indexM + 1);
-				int indexN = findIndex(cigar); //N index in the cigar
-				if(indexN == -1)
+				if (exonIndex > 0)
+					exonIndex--;
+
+				//check on which introns the call falls
+				while (intronIndex < intronsArray.length && (intronStart <= start || intronStart == intronsArray[intronIndex][0])) {
+					intronStart = intronsArray[intronIndex][0];
+					intronEnd = intronsArray[intronIndex][1];
+					if ((start <= intronEnd && start >= intronStart) || (start + length <= intronEnd && start + length > intronStart)) {
+						addToIntron(intronStart, intronEnd, ID, cellRange, cell, intronIndex, bamFileIndex, flag, uniqueId);
+						if (firstIntronAdded == -1)
+							firstIntronAdded = intronIndex;
+					}
+					intronIndex++;
+				}
+				if (intronIndex > 0)
+					intronIndex--;
+
+
+				if (firstExonAdded != -1)
+					exonIndex = firstExonAdded;
+				if (firstIntronAdded != -1)
+					intronIndex = firstIntronAdded;
+
+
+				//check on which junction the call falls
+				if (exonIndex == exonsArray.length)
 					break;
-				length = Util.convertToInteger(cigar.substring(0, indexN));
-				if(length > 3){
-					callOnJunction(exonsArray[exonIndex][1] + 1, length, ID, cell, cellRange, bamFileIndex, flag, uniqueId);
-					start = start + length;
-					if(cigar.length() == indexN)
+				//count the junction
+				start = start + length;
+				if (cigar.length() > indexM) {
+					cigar = cigar.substring(indexM + 1);
+					int indexN = findIndex(cigar); //N index in the cigar
+					if (indexN == -1)
 						break;
-					cigar = cigar.substring(indexN + 1);
-					indexM = cigar.indexOf((int)'M');
-					if(indexM == -1)
-						break;
-					length = Util.convertToInteger(cigar.substring(0, indexM));
-				}
-				else{
-					indexM = cigar.indexOf((int)'M');
-					if(indexM == -1)
-						break;
-					length = Util.convertToInteger(cigar.substring(0,indexN)) + Util.convertToInteger(cigar.substring(indexN + 1,indexM));
+					length = Util.convertToInteger(cigar.substring(0, indexN));
+					if (length > 3) {
+						callOnJunction(exonsArray[exonIndex][1] + 1, length, ID, cell, cellRange, bamFileIndex, flag, uniqueId);
+						start = start + length;
+						if (cigar.length() == indexN)
+							break;
+						cigar = cigar.substring(indexN + 1);
+						indexM = cigar.indexOf((int) 'M');
+						if (indexM == -1)
+							break;
+						length = Util.convertToInteger(cigar.substring(0, indexM));
+					} else {
+						indexM = cigar.indexOf((int) 'M');
+						if (indexM == -1)
+							break;
+						length = Util.convertToInteger(cigar.substring(0, indexN)) + Util.convertToInteger(cigar.substring(indexN + 1, indexM));
+
+					}
+
 
 				}
-									
-				
 			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
 		}
 
 		

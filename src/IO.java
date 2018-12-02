@@ -727,7 +727,7 @@ public class IO {
 					genes.put(splitLine[0], gene);
 				}
 				genes.get(splitLine[0]).getExonStarts().add(splitLine[2]);
-				genes.get(splitLine[0]).getExonEnds().add(splitLine[2]);
+				genes.get(splitLine[0]).getExonEnds().add(splitLine[3]);
 					
 			}
 		} catch (IOException e) {

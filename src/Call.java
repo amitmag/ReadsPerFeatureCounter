@@ -31,12 +31,18 @@ public class Call {
 	}
 
 	public Call(String[] call){
-		this.call=call;
-		this.ID=call[0];
-		this.start=Util.convertToInteger(call[3]);
-		this.cigar=call[5];
-		int cellColumn=findCell();	
-		this.cell=Util.convertToInteger(call[cellColumn].substring(5));
+		try {
+			this.call = call;
+			this.ID = call[0];
+			this.start = Util.convertToInteger(call[3]);
+			this.cigar = call[5];
+			int cellColumn = findCell();
+			this.cell = Util.convertToInteger(call[cellColumn].substring(5));
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+
 	}
 
 	public int getStart() {

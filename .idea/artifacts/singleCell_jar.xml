@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="singleCell.jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/singleCell_jar</output-path>
+    <root id="archive" name="genesProject.jar">
+      <element id="module-output" name="genesProject" />
+    </root>
+  </artifact>
+</component>
