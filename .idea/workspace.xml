@@ -8,12 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="94eea30b-87b8-4955-957e-50dd40f55018" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/population_jar/genesProject.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/population_jar/population.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/population_jar/population.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Processing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cellsGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cellsGroup.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,45 +34,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="12" />
+          <entry key="java" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="12" />
+          <entry key="JAVA" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1042" />
+          <entry key="java" value="2166" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1042" />
+          <entry key="JAVA" value="2166" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Processing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cellsGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="460">
+              <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -83,8 +68,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="736" column="13" lean-forward="true" selection-start-line="736" selection-start-column="13" selection-end-line="736" selection-end-column="13" />
+            <state relative-caret-position="290">
+              <caret line="729" column="21" selection-start-line="729" selection-start-column="21" selection-end-line="729" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -110,12 +95,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="645" selection-start-line="645" selection-start-column="2" selection-end-line="648" selection-end-column="5" />
+            <state relative-caret-position="235">
+              <caret line="644" column="32" lean-forward="true" selection-start-line="644" selection-start-column="32" selection-end-line="644" selection-end-column="32" />
               <folding>
                 <element signature="e#16769#17153#0" />
                 <element signature="e#17157#18308#0" />
                 <element signature="e#18312#19386#0" />
+                <element signature="e#20464#20476#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,6 +121,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Processing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,10 +164,10 @@
         <option value="$PROJECT_DIR$/src/Intron.java" />
         <option value="$PROJECT_DIR$/src/Call.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Processing.java" />
         <option value="$PROJECT_DIR$/src/cellsGroup.java" />
-        <option value="$PROJECT_DIR$/src/Gene.java" />
         <option value="$PROJECT_DIR$/src/IO.java" />
+        <option value="$PROJECT_DIR$/src/Processing.java" />
+        <option value="$PROJECT_DIR$/src/Gene.java" />
       </list>
     </option>
   </component>
@@ -592,13 +590,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Processing.java</url>
-          <line>212</line>
+          <line>216</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Processing.java</url>
-          <line>183</line>
+          <line>187</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -691,34 +689,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cellsGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="736" column="13" lean-forward="true" selection-start-line="736" selection-start-column="13" selection-end-line="736" selection-end-column="13" />
+        <state relative-caret-position="460">
+          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="645" selection-start-line="645" selection-start-column="2" selection-end-line="648" selection-end-column="5" />
+        <state relative-caret-position="235">
+          <caret line="644" column="32" lean-forward="true" selection-start-line="644" selection-start-column="32" selection-end-line="644" selection-end-column="32" />
           <folding>
             <element signature="e#16769#17153#0" />
             <element signature="e#17157#18308#0" />
             <element signature="e#18312#19386#0" />
+            <element signature="e#20464#20476#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="729" column="21" selection-start-line="729" selection-start-column="21" selection-end-line="729" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Processing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="129" column="44" lean-forward="true" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+        <state relative-caret-position="494">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

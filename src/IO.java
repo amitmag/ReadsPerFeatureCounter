@@ -727,18 +727,17 @@ public class IO {
 
 	}
 
-	public void printGenesHashSetIntoFile(String fileName, HashMap<String, Gene> genes) {
-//		try {
-//			BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-//			for(String geneName : genes.keySet()) {
-//				Gene gene =
-//			}
-//
-//			}
-//		catch (IOException e){
-//			e.printStackTrace();
-//		}
-//
-//	}
+	public void writeGenesHashSetIntoFile(String fileName, HashMap<String, Gene> genes) {
+		try {
+				BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+				for(String geneName : genes.keySet()) {
+					genes.get(geneName).writeGeneToFile(bw);
+					bw.write('\n');
+				}
+			}
+		catch (IOException e){
+			e.printStackTrace();
+		}
 	}
+
 }

@@ -56,7 +56,6 @@ public class Gene{
 		this.totalCallsBF=new int[numOfBamFiles];
 		this.difCigarBF=new int[numOfBamFiles];
 	}
-	
 
 //************************getters and setters***********************//
 	
@@ -643,10 +642,38 @@ public class Gene{
 		}
 	}
 
-//	private readGneFromFile(String geneLineInFile){
-//		String[] splitLine = geneLineInFile.split("\t'");
-//
-//	}
+	public static Gene createGeneFromFile(String geneLineInFile){
+		String[] splitLine = geneLineInFile.split("\t'");
+		String name = splitLine[0];
+		String chrom = splitLine[1];
+
+		//Create cells list
+		String[] cellsStrings = splitLine[2].split(",");
+		List<cellsGroup> cells = new ArrayList<cellsGroup>();
+		for(int i = 0; i < cellsStrings.length; i++){
+			String[] cellStartAndEnd = cellsStrings[i].split("-");
+			cellsGroup cell = new cellsGroup(Integer.parseInt(cellStartAndEnd[0]), Integer.parseInt(cellStartAndEnd[1]));
+			cells.add(cell);
+		}
+
+		//Create exons starts list
+		LinkedList<String> starts = new LinkedList<>();
+		String[] exonStarts = splitLine[3].split(",");
+		for(String start: exonStarts){
+			starts.add(start);
+		}
+		//Create exons ends list
+		LinkedList<String> ends = new LinkedList<>();
+		String[] exonsEnds = splitLine[4].split(",");
+		for(String end: exonsEnds){
+			ends.add(end);
+		}
+
+		int bamFilesNumber = Integer.parseInt(splitLine[5]);
+
+		Gene gene = new Gene(name, chrom, cells, starts, ends, bamFilesNumber);
+		return gene;
+	}
 
 	
 	

@@ -78,14 +78,19 @@ public class Processing {
 			// end files creation
 			
 			HashMap<String, Gene> genes = io.readTranscriptsFileIntoHashMap(br, cells, bamFiles.length);
+			io.writeGenesHashSetIntoFile(outputFolder + "/genesObjects.csv", genes);
 			int index = 0;
 			
 			List<String> needToRun = null;
 			if(flag == 'l' || flag == 'L')
 				needToRun = fileToList(outputFolder.substring(0, outputFolder.length()-3) + "/runLater.txt");
-			
+
+			BufferedReader genesObjectsFile = new BufferedReader(new FileReader(outputFolder + "/genesObjects.csv"));
 			boolean foundFirstGene = false;
-			for(String geneName : genes.keySet()) {	
+			String geneLine = "";
+			while((geneLine = genesObjectsFile.readLine()) != null){
+				Gene gene = Gene.createGeneFromFile(geneLine);
+				String geneName = gene.getName();
 				index++;
 				//if program need to start from specific gene, skip genes until get to the gene
 				if(!foundFirstGene && !geneToStart.equals("-")){
@@ -96,7 +101,6 @@ public class Processing {
 				}
 				
 				if (flag == 's' || flag == 'p' || ((flag == 'l' || flag == 'L') && needToRun.contains(geneName))) {
-					Gene gene = genes.get(geneName);
 					// open files to write
 					trenscriptsFile = new FileWriter(outputFolder + "/junctions.csv", true);
 					exonsFile = new FileWriter(outputFolder + "/exons.csv", true);
