@@ -1,3 +1,5 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.*;
 
 import javax.xml.transform.sax.SAXTransformerFactory;
@@ -606,7 +608,45 @@ public class Gene{
 			this.difCigarBF[BamIndex]++;
 		
 	}
-	
+
+	public void writeGeneToFile(BufferedWriter file){
+		try {
+			// Write gene name and chrom
+			file.write(name + '\t' + chrom);
+
+			// Write cells
+			for(int i = 0; i < cells.size(); i++){
+				file.write(cells.get(i).toString());
+				if(i < cells.size() - 1)
+					file.write(',');
+			}
+			file.write('\t');
+
+			// Write exon starts
+			for(int i = 0; i < exonStarts.size(); i++){
+				file.write(exonStarts.get(i));
+				if(i < exonEnds.size() - 1)
+					file.write(',');
+			}
+			file.write('\t');
+
+			// Write exon ends
+			for(int i = 0; i < exonStarts.size(); i++){
+				file.write(exonStarts.get(i));
+				if(i < exonEnds.size() - 1)
+					file.write(',');
+			}
+			file.write('\t' + totalCallsBF.length);
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+
+//	private readGneFromFile(String geneLineInFile){
+//		String[] splitLine = geneLineInFile.split("\t'");
+//
+//	}
 
 	
 	

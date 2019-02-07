@@ -80,9 +80,9 @@ public class Processing {
 			HashMap<String, Gene> genes = io.readTranscriptsFileIntoHashMap(br, cells, bamFiles.length);
 			int index = 0;
 			
-			List<String> needToRun=null;
+			List<String> needToRun = null;
 			if(flag == 'l' || flag == 'L')
-				needToRun = fileToList(outputFolder.substring(0, outputFolder.length()-3)+"/runLater.txt");
+				needToRun = fileToList(outputFolder.substring(0, outputFolder.length()-3) + "/runLater.txt");
 			
 			boolean foundFirstGene = false;
 			for(String geneName : genes.keySet()) {	
@@ -112,7 +112,7 @@ public class Processing {
 	
 					System.out.println(index + "." + geneName + " ");
 					// write the gene to timestamps file
-					times.write(index + ". " + gene + "	");
+					times.write(index + ". " + gene.getName() + "	");
 					times.write(new Timestamp(new java.util.Date().getTime()).toString());
 					times.append(System.lineSeparator());
 					List<List<String>> starts = createStartsList(gene);

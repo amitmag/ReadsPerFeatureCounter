@@ -14,20 +14,20 @@ public class IO {
 
 	// creates the headers of the junctions file
 	public void createJunctionsFile(FileWriter writer, String fileName, List<cellsGroup> cells, String[] BAMFiles,
-			char flag) {
+									char flag) {
 		try {
 			writer.write("Gene Name");
 			writer.append(',');
 			writer.write("Chromosome");
 			writer.append(',');
-			if(flag == 's' || flag == 'l'){
+			if (flag == 's' || flag == 'l') {
 				writer.write("Index");
 				writer.append(',');
 			}
 			writer.write("Starting Point");
 			writer.append(',');
 			writer.write("Ending Point");
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++)
 					for (int j = cells.get(i).getFirst(); j <= cells.get(i).getLast(); j++) {
 						writer.append(',');
@@ -40,7 +40,7 @@ public class IO {
 				}
 
 			}
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				writer.append(',');
 				writer.write("Total");
 			}
@@ -52,7 +52,7 @@ public class IO {
 
 	// creates the headers of the exons file
 	public void createExonsFile(FileWriter writer, String fileName, List<cellsGroup> cells, String[] BAMFiles,
-			char flag) {
+								char flag) {
 		try {
 			writer.write("Gene Name");
 			writer.append(',');
@@ -61,7 +61,7 @@ public class IO {
 			writer.write("Exon Start");
 			writer.append(',');
 			writer.write("Exon End");
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++)
 					for (int j = cells.get(i).getFirst(); j <= cells.get(i).getLast(); j++) {
 						writer.append(',');
@@ -74,7 +74,7 @@ public class IO {
 				}
 
 			}
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				writer.append(',');
 				writer.write("Total");
 			}
@@ -86,7 +86,7 @@ public class IO {
 
 	// creates the headers of the introns file
 	public void createIntronsFile(FileWriter writer, String fileName, List<cellsGroup> cells, String[] BAMFiles,
-			char flag) {
+								  char flag) {
 		try {
 			writer.write("Gene Name");
 			writer.append(',');
@@ -95,7 +95,7 @@ public class IO {
 			writer.write("Intron Start");
 			writer.append(',');
 			writer.write("Intron End");
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++)
 					for (int j = cells.get(i).getFirst(); j <= cells.get(i).getLast(); j++) {
 						writer.append(',');
@@ -108,7 +108,7 @@ public class IO {
 				}
 
 			}
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				writer.append(',');
 				writer.write("Total");
 			}
@@ -120,7 +120,7 @@ public class IO {
 
 	// creates the headers of the unknownJunctions file
 	public void createUnknownJunctionFile(FileWriter writer, String fileName, List<cellsGroup> cells, String[] BAMFiles,
-			char flag) {
+										  char flag) {
 		try {
 			writer.write("Gene Name");
 			writer.append(',');
@@ -129,7 +129,7 @@ public class IO {
 			writer.write("Start");
 			writer.append(',');
 			writer.write("End");
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++)
 					for (int j = cells.get(i).getFirst(); j <= cells.get(i).getLast(); j++) {
 						writer.append(',');
@@ -141,7 +141,7 @@ public class IO {
 					writer.write(BAMFiles[i]);
 				}
 			}
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				writer.append(',');
 				writer.write("Total");
 			}
@@ -153,7 +153,7 @@ public class IO {
 
 	// creates the headers of the geneCalls file
 	public void createGeneCallsFile(FileWriter writer, String fileName, List<cellsGroup> cells, String[] BAMFiles,
-			char flag) {
+									char flag) {
 		try {
 			writer.write("Gene Name");
 			writer.append(',');
@@ -162,7 +162,7 @@ public class IO {
 			writer.write("Start");
 			writer.append(',');
 			writer.write("End");
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++)
 					for (int j = cells.get(i).getFirst(); j <= cells.get(i).getLast(); j++) {
 						writer.append(',');
@@ -174,7 +174,7 @@ public class IO {
 					writer.write(BAMFiles[i]);
 				}
 			}
-			if (flag == 's'|| flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				writer.append(',');
 				writer.write("Total");
 			}
@@ -186,7 +186,7 @@ public class IO {
 
 	// creates the interval list file
 	public void createIntervalList(Gene gene, int startingPosition, int endingPosition, String fileName,
-			String outputFolder) {
+								   String outputFolder) {
 		try {
 
 			FileWriter intervalList = new FileWriter(outputFolder + "/one_gene_" + fileName + ".interval_list");
@@ -321,14 +321,12 @@ public class IO {
 			intervalList.write("\t");
 			intervalList.write(gene.getName());
 
-			if(!gene.getChrom().toLowerCase().startsWith("chr"))
+			if (!gene.getChrom().toLowerCase().startsWith("chr"))
 				System.out.println("The chromosome of the gene" + gene.getName() + "does not start with 'chr'");
 
 			intervalList.close();
 
-		}
-
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -343,7 +341,7 @@ public class IO {
 				writer.append(',');
 				writer.write(gene.getChrom());
 				writer.append(',');
-				if (flag == 's' || flag =='l') {
+				if (flag == 's' || flag == 'l') {
 					if (junc.getStartCounter() != 0 && junc.getEndCounter() != 0) {
 						writer.write(String.format("%d", junc.getStartCounter()));
 						writer.write(";");
@@ -358,7 +356,7 @@ public class IO {
 				writer.append(',');
 				writer.write(String.format("%d", junc.getEnd()));
 				writer.append(',');
-				if (flag == 's' || flag =='l') {
+				if (flag == 's' || flag == 'l') {
 					for (int j = 0; j < cells.size(); j++) {
 						for (int a = 0; a < cellsGroup.rangeSize(cells, j); a++) {
 							if (numOfCalls == -1)
@@ -385,9 +383,7 @@ public class IO {
 
 			}
 
-		}
-
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 
 		}
@@ -406,7 +402,7 @@ public class IO {
 				writer.append(',');
 				writer.write(String.format("%d", exon.getEnd()));
 				writer.append(',');
-				if (flag == 's'|| flag =='l') {
+				if (flag == 's' || flag == 'l') {
 					for (int j = 0; j < cells.size(); j++) {
 						for (int a = 0; a < cellsGroup.rangeSize(cells, j); a++) {
 							if (numOfCalls == -1)
@@ -434,9 +430,7 @@ public class IO {
 			}
 			// skippingExon(41310655, 41310762, writer2, gene, cells);
 			// writePercentage(41310655, 41310762, writer2, gene, cells);
-		}
-
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 
 		}
@@ -456,7 +450,7 @@ public class IO {
 				writer.append(',');
 				writer.write(String.format("%d", intron.getEnd()));
 				writer.append(',');
-				if (flag == 's' || flag =='l') {
+				if (flag == 's' || flag == 'l') {
 					for (int j = 0; j < cells.size(); j++) {
 						for (int a = 0; a < cellsGroup.rangeSize(cells, j); a++) {
 							if (numOfCalls == -1)
@@ -481,9 +475,7 @@ public class IO {
 				writer.append(System.lineSeparator());
 
 			}
-		}
-
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 
 		}
@@ -491,7 +483,7 @@ public class IO {
 
 	// write for every gene in which cell and exon the calls fall
 	public void writeUnknownJunction(FileWriter writer, Gene gene, List<cellsGroup> cells, int geneStart, int geneEnd,
-			int numOfCalls, char flag) {
+									 int numOfCalls, char flag) {
 		try {
 
 			writer.write(gene.getName());
@@ -502,7 +494,7 @@ public class IO {
 			writer.append(',');
 			writer.write(String.format("%d", geneEnd));
 			writer.append(',');
-			if (flag == 's' || flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++) {
 					for (int a = 0; a < cellsGroup.rangeSize(cells, i); a++) {
 						if (numOfCalls == -1)
@@ -525,9 +517,7 @@ public class IO {
 				}
 			}
 			writer.append(System.lineSeparator());
-		}
-
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 
 		}
@@ -535,7 +525,7 @@ public class IO {
 	}
 
 	public void writeGeneCell(FileWriter writer, Gene gene, List<cellsGroup> cells, int geneStart, int geneEnd,
-			int totalCalls, int numOfCalls, char flag) {
+							  int totalCalls, int numOfCalls, char flag) {
 		try {
 			writer.write(gene.getName());
 			writer.append(',');
@@ -545,7 +535,7 @@ public class IO {
 			writer.append(',');
 			writer.write(String.format("%d", geneEnd));
 			writer.append(',');
-			if (flag == 's' || flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++) {
 					for (int a = 0; a < cellsGroup.rangeSize(cells, i); a++) {
 						if (numOfCalls == -1)
@@ -578,7 +568,7 @@ public class IO {
 	}
 
 	public void writedifCigar(FileWriter writer, Gene gene, List<cellsGroup> cells, int geneStart, int geneEnd,
-			int numOfCalls, char flag) {
+							  int numOfCalls, char flag) {
 		try {
 
 			writer.write(gene.getName());
@@ -589,7 +579,7 @@ public class IO {
 			writer.append(',');
 			writer.write(String.format("%d", geneEnd));
 			writer.append(',');
-			if (flag == 's' || flag =='l') {
+			if (flag == 's' || flag == 'l') {
 				for (int i = 0; i < cells.size(); i++) {
 					for (int a = 0; a < cellsGroup.rangeSize(cells, i); a++) {
 						if (numOfCalls == -1)
@@ -684,57 +674,71 @@ public class IO {
 			e.getMessage();
 		}
 	}
-	
-    public FileWriter createRunLaterFile(String outputPathFolder, String runLaterFileName){
-    	FileWriter bw = null;
-        try {
 
-            bw = new FileWriter(outputPathFolder + runLaterFileName, true);
-            File directory = new File(outputPathFolder + "/LG");
-            File[] fList = directory.listFiles();
-            if(fList != null){
-	            for (int i = 0; i < fList.length; i++) {
-	                if (fList[i].isFile()) {
-	                    BufferedReader br = new BufferedReader(new FileReader(fList[i]));
-	                    String line = "";
-	                    while ((line = br.readLine()) != null)
-	                        bw.write(line + '\n');
-	                    br.close();
-	                    fList[i].delete();
-	                }
-	            }
-            }
-            bw.flush();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        
-        return bw;
-    }
+	public FileWriter createRunLaterFile(String outputPathFolder, String runLaterFileName) {
+		FileWriter bw = null;
+		try {
 
-    //read transcripts file into hashmap
-    public HashMap<String, Gene> readTranscriptsFileIntoHashMap(BufferedReader transcriptFile, List<cellsGroup> cells, int bamfilesNumber){
-    	HashMap<String, Gene> genes = new HashMap<String, Gene>();
-    	String line;
-    	try {
-			while((line = transcriptFile.readLine()) != null) {
+			bw = new FileWriter(outputPathFolder + runLaterFileName, true);
+			File directory = new File(outputPathFolder + "/LG");
+			File[] fList = directory.listFiles();
+			if (fList != null) {
+				for (int i = 0; i < fList.length; i++) {
+					if (fList[i].isFile()) {
+						BufferedReader br = new BufferedReader(new FileReader(fList[i]));
+						String line = "";
+						while ((line = br.readLine()) != null)
+							bw.write(line + '\n');
+						br.close();
+						fList[i].delete();
+					}
+				}
+			}
+			bw.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return bw;
+	}
+
+	//read transcripts file into hashmap
+	public HashMap<String, Gene> readTranscriptsFileIntoHashMap(BufferedReader transcriptFile, List<cellsGroup> cells, int bamfilesNumber) {
+		HashMap<String, Gene> genes = new HashMap<String, Gene>();
+		String line;
+		try {
+			while ((line = transcriptFile.readLine()) != null) {
 				String[] splitLine = line.split("\t");
-				if(!genes.containsKey(splitLine[0]) && splitLine.length > 2) {
-					if(!splitLine[1].toLowerCase().startsWith("chr"))
-						System.out.println("The chromosome of "+ splitLine[0] + " does not start with 'chr'");
-					Gene gene = new Gene(splitLine[0], splitLine[1], cells, new LinkedList<String>(), new LinkedList<String>(), bamfilesNumber);	
+				if (!genes.containsKey(splitLine[0]) && splitLine.length > 2) {
+					if (!splitLine[1].toLowerCase().startsWith("chr"))
+						System.out.println("The chromosome of " + splitLine[0] + " does not start with 'chr'");
+					Gene gene = new Gene(splitLine[0], splitLine[1], cells, new LinkedList<String>(), new LinkedList<String>(), bamfilesNumber);
 					genes.put(splitLine[0], gene);
 				}
 				genes.get(splitLine[0]).getExonStarts().add(splitLine[2]);
 				genes.get(splitLine[0]).getExonEnds().add(splitLine[3]);
-					
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    	
-    	return genes;
-    	
-    }
+
+		return genes;
+
+	}
+
+	public void printGenesHashSetIntoFile(String fileName, HashMap<String, Gene> genes) {
+//		try {
+//			BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+//			for(String geneName : genes.keySet()) {
+//				Gene gene =
+//			}
+//
+//			}
+//		catch (IOException e){
+//			e.printStackTrace();
+//		}
+//
+//	}
+	}
 }
