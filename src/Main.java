@@ -8,11 +8,19 @@ public class Main {
 	static Processing obj = new Processing();
 
 	public static void main(String[] args) throws IOException {
-		populationRun(args);
+		if(args[0].equals("sc"))
+			singleCellRun(args);
+		else if(args[0].equals("pop"))
+			populationRun(args);
+		else if(args[0].equals("trans"))
+			createMouseTranscriptsFile(args);
 
 	}
 
-	public static void createMouseTranscriptsFile(String workingDirectory, String gtfFile, String transcriptsFileName) {
+	public static void createMouseTranscriptsFile(String[] args) {
+		String workingDirectory = args[1];
+		String gtfFile = args[2];
+		String transcriptsFileName = args[3];
 //		String transcriptsFileName="mouseGenesTest.txt";
 		// String gtfFile = "gpfs0/tals/projects/data/Transcriptomes/mm10/mm10_combined_annotated_oneName.gtf";
 //		String gtfFile = "Z:\\ess_projects\\data\\Transcriptomes\\mm10\\mm10_combined_annotated_oneName.gtf";
@@ -23,7 +31,7 @@ public class Main {
 
 	public static void singleCellRun(String[] args) {
 		List<cellsGroup> cells = new ArrayList<>();
-		int i = 0;
+		int i = 1;
 		String picardPath = args[i++];
 		String fileName = args[i++];
 		String folderName = args[i++];
@@ -42,10 +50,10 @@ public class Main {
 	}
 
 	public static void populationRun(String args[]){
-		if(args.length < 6)
+		if(args.length < 7)
 			System.out.println("Some parameters are missing");
-		String[] BamFiles = new String[args.length - 6];
-		int i = 0;
+		String[] BamFiles = new String[args.length - 7];
+		int i = 1;
 		String picardPath = args[i++];
 		String folderName = args[i++];
 		String transFile = args[i++];

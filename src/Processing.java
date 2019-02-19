@@ -698,10 +698,7 @@ public class Processing {
 						transcriptStarts.get(transcriptID).add(row[3]);
 						transcriptEnds.get(transcriptID).add(row[4]);
 					}
-								
-					
 				}
-
 				//create genes according to transcripts
 				for(String name : geneChrom.keySet()){
 					String chrom = geneChrom.get(name);
@@ -723,13 +720,7 @@ public class Processing {
 				
 				deletedGenesFile.close();
 				br.close();
-				
-				
-			
-			
-
 			}
-
 			catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

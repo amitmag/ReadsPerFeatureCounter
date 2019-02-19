@@ -611,15 +611,18 @@ public class Gene{
 	public void writeGeneToFile(BufferedWriter file){
 		try {
 			// Write gene name and chrom
-			file.write(name + '\t' + chrom);
+			file.write(name + '\t' + chrom + '\t');
 
 			// Write cells
-			for(int i = 0; i < cells.size(); i++){
-				file.write(cells.get(i).toString());
-				if(i < cells.size() - 1)
-					file.write(',');
+			if(cells != null) {
+				for (int i = 0; i < cells.size(); i++) {
+					file.write(cells.get(i).toString());
+					if (i < cells.size() - 1)
+						file.write(',');
+				}
 			}
-			file.write('\t');
+			else
+				file.write("-" + '\t');
 
 			// Write exon starts
 			for(int i = 0; i < exonStarts.size(); i++){
@@ -635,7 +638,8 @@ public class Gene{
 				if(i < exonEnds.size() - 1)
 					file.write(',');
 			}
-			file.write('\t' + totalCallsBF.length);
+			file.write('\t');
+			file.write(String.valueOf(totalCallsBF.length));
 		}
 		catch (IOException e){
 			e.printStackTrace();
@@ -643,17 +647,19 @@ public class Gene{
 	}
 
 	public static Gene createGeneFromFile(String geneLineInFile){
-		String[] splitLine = geneLineInFile.split("\t'");
+		String[] splitLine = geneLineInFile.split("\t");
 		String name = splitLine[0];
 		String chrom = splitLine[1];
 
 		//Create cells list
-		String[] cellsStrings = splitLine[2].split(",");
 		List<cellsGroup> cells = new ArrayList<cellsGroup>();
-		for(int i = 0; i < cellsStrings.length; i++){
-			String[] cellStartAndEnd = cellsStrings[i].split("-");
-			cellsGroup cell = new cellsGroup(Integer.parseInt(cellStartAndEnd[0]), Integer.parseInt(cellStartAndEnd[1]));
-			cells.add(cell);
+		if(!splitLine[2].equals("-")) {
+			String[] cellsStrings = splitLine[2].split(",");
+			for (int i = 0; i < cellsStrings.length; i++) {
+				String[] cellStartAndEnd = cellsStrings[i].split("-");
+				cellsGroup cell = new cellsGroup(Integer.parseInt(cellStartAndEnd[0]), Integer.parseInt(cellStartAndEnd[1]));
+				cells.add(cell);
+			}
 		}
 
 		//Create exons starts list
@@ -674,10 +680,4 @@ public class Gene{
 		Gene gene = new Gene(name, chrom, cells, starts, ends, bamFilesNumber);
 		return gene;
 	}
-
-	
-	
-
-
-
 }
