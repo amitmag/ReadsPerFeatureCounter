@@ -78,14 +78,14 @@ public class Processing {
 			// end files creation
 			
 			HashMap<String, Gene> genes = io.readTranscriptsFileIntoHashMap(br, cells, bamFiles.length);
-			io.writeGenesHashSetIntoFile(outputFolder + "/genesObjects.csv", genes);
+			io.writeGenesHashSetIntoFile(outputFolder + "/genesObjects.txt", genes);
 			int index = 0;
 			
 			List<String> needToRun = null;
 			if(flag == 'l' || flag == 'L')
 				needToRun = fileToList(outputFolder.substring(0, outputFolder.length()-3) + "/runLater.txt");
 
-			BufferedReader genesObjectsFile = new BufferedReader(new FileReader(outputFolder + "/genesObjects.csv"));
+			BufferedReader genesObjectsFile = new BufferedReader(new FileReader(outputFolder + "/genesObjects.txt"));
 			boolean foundFirstGene = false;
 			String geneLine = "";
 			while((geneLine = genesObjectsFile.readLine()) != null){

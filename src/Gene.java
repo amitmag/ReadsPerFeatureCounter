@@ -184,8 +184,8 @@ public class Gene{
 	
 	//set exons array according to the starts and ends list
 		public void setExons(List<List<String>> starts, List<List<String>> ends,List<cellsGroup> cells, int numOfBamFiles, char flag) {
-			List<String> exonsString=new ArrayList<String>();
-			List<GenePart> exonsList=new ArrayList<GenePart>();
+			List<String> exonsString=new ArrayList<>();
+			List<GenePart> exonsList=new ArrayList<>();
 			//create a list of the exons
 			for(int i = 0; i < starts.size(); i++){
 				for(int j = 0; j < starts.get(i).size(); j++){			
@@ -231,7 +231,7 @@ public class Gene{
 			
 			//create a list of the introns
 			for(int i = 0; i < starts.size(); i++){
-				for(int j = 0; j < starts.get(i).size()-1; j++){			
+				for(int j = 0; j < starts.get(i).size() - 1; j++){
 					String intronName = ends.get(i).get(j) + "-" + starts.get(i).get(j+1);
 					if(!intronsString.contains(intronName)){
 						Intron intron;
@@ -627,16 +627,16 @@ public class Gene{
 			// Write exon starts
 			for(int i = 0; i < exonStarts.size(); i++){
 				file.write(exonStarts.get(i));
-				if(i < exonEnds.size() - 1)
-					file.write(',');
+				if(i < exonStarts.size() - 1)
+					file.write('/');
 			}
 			file.write('\t');
 
 			// Write exon ends
-			for(int i = 0; i < exonStarts.size(); i++){
-				file.write(exonStarts.get(i));
+			for(int i = 0; i < exonEnds.size(); i++){
+				file.write(exonEnds.get(i));
 				if(i < exonEnds.size() - 1)
-					file.write(',');
+					file.write('/');
 			}
 			file.write('\t');
 			file.write(String.valueOf(totalCallsBF.length));
@@ -664,13 +664,13 @@ public class Gene{
 
 		//Create exons starts list
 		LinkedList<String> starts = new LinkedList<>();
-		String[] exonStarts = splitLine[3].split(",");
+		String[] exonStarts = splitLine[3].split("/");
 		for(String start: exonStarts){
 			starts.add(start);
 		}
 		//Create exons ends list
 		LinkedList<String> ends = new LinkedList<>();
-		String[] exonsEnds = splitLine[4].split(",");
+		String[] exonsEnds = splitLine[4].split("/");
 		for(String end: exonsEnds){
 			ends.add(end);
 		}
