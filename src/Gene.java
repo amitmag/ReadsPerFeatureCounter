@@ -412,9 +412,14 @@ public class Gene{
 		
 		int start = call.getStart();
 		String ID = call.getID();
-				
+
 		int cellRange = cellsGroup.findCellsRange(cells, call.getCell());
-		cell= cell - cells.get(cellRange).getFirst();
+		if(cellRange == -1){
+			System.out.println("Call " + ID + " falling on invalid cell");
+			return;
+		}
+		cell = cell - cells.get(cellRange).getFirst();
+
 		this.cells.get(cellRange)[cell]++;	
 		if(!cigar.equals("*")){
 			int indexN = findIndex(cigar); //index of first junction
@@ -429,9 +434,8 @@ public class Gene{
 			}
 							
 		}
-		else 
+		else
 			this.difCigarCells.get(cellRange)[cell]++;//count the calls with cigar "*"
-		
 	}
 	
 	
