@@ -616,10 +616,11 @@ public class Gene{
 			// Write cells
 			if(cells != null) {
 				for (int i = 0; i < cells.size(); i++) {
-					file.write(cells.get(i).toString());
+					file.write("1-" + cells.get(i).length);
 					if (i < cells.size() - 1)
 						file.write(',');
 				}
+				file.write('\t');
 			}
 			else
 				file.write("-" + '\t');

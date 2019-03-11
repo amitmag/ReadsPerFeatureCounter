@@ -85,6 +85,7 @@ public class Processing {
 			if(flag == 'l' || flag == 'L')
 				needToRun = fileToList(outputFolder.substring(0, outputFolder.length()-3) + "/runLater.txt");
 
+
 			BufferedReader genesObjectsFile = new BufferedReader(new FileReader(outputFolder + "/genesObjects.txt"));
 			boolean foundFirstGene = false;
 			String geneLine = "";
