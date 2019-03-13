@@ -734,7 +734,9 @@ public class IO {
 					genes.get(geneName).writeGeneToFile(bw);
 					bw.write('\n');
 				}
+				bw.close();
 			}
+
 		catch (IOException e){
 			e.printStackTrace();
 		}

@@ -8,8 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="94eea30b-87b8-4955-957e-50dd40f55018" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/genesProject/Gene.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/genesProject/Gene.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/test_jar/ReadsPerFeatureCounter.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/test_jar/ReadsPerFeatureCounter.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/genesProject/IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/genesProject/IO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,13 +27,13 @@
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="2" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,12 +48,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2696" />
+          <entry key="java" value="2722" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2696" />
+          <entry key="JAVA" value="2722" />
         </counts>
       </usages-collector>
     </session>
@@ -62,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cellsGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="612">
               <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
             </state>
           </provider>
@@ -71,11 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="733" column="47" selection-start-line="733" selection-start-column="40" selection-end-line="733" selection-end-column="55" />
-              <folding>
-                <element signature="e#25347#25361#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="356">
+              <caret line="733" column="48" lean-forward="true" selection-start-line="733" selection-start-column="48" selection-end-line="733" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -98,14 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5239">
-              <caret line="421" lean-forward="true" selection-start-line="421" selection-end-line="421" />
-              <folding>
-                <element signature="e#20533#20545#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="605">
+              <caret line="636" column="13" lean-forward="true" selection-start-line="636" selection-start-column="13" selection-end-line="636" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -113,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="6732">
               <caret line="434" selection-start-line="434" selection-end-line="434" />
             </state>
           </provider>
@@ -137,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Processing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="74" column="110" lean-forward="true" selection-start-line="74" selection-start-column="110" selection-end-line="74" selection-end-column="110" />
+            <state relative-caret-position="147">
+              <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,6 +161,7 @@
       <find>Gene.updateCallPopulation</find>
       <find>startwith</find>
       <find>runLater.txt</find>
+      <find>Please check your parameters</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,9 +174,9 @@
         <option value="$PROJECT_DIR$/src/Call.java" />
         <option value="$PROJECT_DIR$/src/cellsGroup.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Processing.java" />
         <option value="$PROJECT_DIR$/src/IO.java" />
         <option value="$PROJECT_DIR$/src/Gene.java" />
-        <option value="$PROJECT_DIR$/src/Processing.java" />
       </list>
     </option>
   </component>
@@ -191,10 +187,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2011" />
-    <option name="y" value="121" />
-    <option name="width" value="1242" />
-    <option name="height" value="672" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -557,7 +553,7 @@
     <option name="totallyTimeSpent" value="11537000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.1785235" />
@@ -570,7 +566,7 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.13070115" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29284164" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1670282" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2657267" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -635,27 +631,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Processing.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/IO.java</url>
-          <line>725</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/IO.java</url>
-          <line>715</line>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Processing.java</url>
           <line>145</line>
           <properties />
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Processing.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -709,6 +693,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cellsGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Junction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -720,6 +711,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6732">
+          <caret line="434" selection-start-line="434" selection-end-line="434" />
         </state>
       </provider>
     </entry>
@@ -737,47 +735,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cellsGroup.java">
+    <entry file="file://$PROJECT_DIR$/src/Processing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        <state relative-caret-position="147">
+          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="733" column="47" selection-start-line="733" selection-start-column="40" selection-end-line="733" selection-end-column="55" />
-          <folding>
-            <element signature="e#25347#25361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="434" selection-start-line="434" selection-end-line="434" />
+        <state relative-caret-position="356">
+          <caret line="733" column="48" lean-forward="true" selection-start-line="733" selection-start-column="48" selection-end-line="733" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5239">
-          <caret line="421" lean-forward="true" selection-start-line="421" selection-end-line="421" />
-          <folding>
-            <element signature="e#20533#20545#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="74" column="110" lean-forward="true" selection-start-line="74" selection-start-column="110" selection-end-line="74" selection-end-column="110" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="605">
+          <caret line="636" column="13" lean-forward="true" selection-start-line="636" selection-start-column="13" selection-end-line="636" selection-end-column="13" />
         </state>
       </provider>
     </entry>
